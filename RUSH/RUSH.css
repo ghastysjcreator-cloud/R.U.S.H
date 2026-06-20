@@ -1,0 +1,398 @@
+/* =========================
+   RESET
+========================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  min-height: 100%;
+}
+
+/* =========================
+   BODY
+========================= */
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+
+  background:
+    radial-gradient(circle at top, rgba(57, 255, 136, 0.12), transparent 30%),
+    linear-gradient(90deg, rgba(57, 255, 136, 0.04) 1px, transparent 1px),
+    linear-gradient(0deg, rgba(57, 255, 136, 0.04) 1px, transparent 1px), #070b10;
+
+  background-size:
+    auto,
+    60px 60px,
+    60px 60px,
+    auto;
+
+  color: white;
+
+  min-height: 100vh;
+}
+
+/* Floating particles */
+
+body::before {
+  content: "";
+
+  position: fixed;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  background-image: radial-gradient(#39ff88 1px, transparent 1px);
+
+  background-size: 120px 120px;
+
+  opacity: 0.12;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  width: 100%;
+
+  padding: 20px 50px;
+
+  background: #10151d;
+
+  border-bottom: 2px solid #39ff88;
+
+  box-shadow: 0 0 20px rgba(57, 255, 136, 0.15);
+}
+
+/* =========================
+   LOGO
+========================= */
+
+.logoBox {
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+}
+
+.logoImage {
+  width: 90px;
+
+  height: 90px;
+
+  object-fit: contain;
+
+  animation: logoGlow 4s infinite ease-in-out;
+}
+
+@keyframes logoGlow {
+  0% {
+    filter: drop-shadow(0 0 8px #39ff88);
+  }
+
+  50% {
+    filter: drop-shadow(0 0 20px #39ff88) drop-shadow(0 0 40px #39ff88);
+  }
+
+  100% {
+    filter: drop-shadow(0 0 8px #39ff88);
+  }
+}
+
+.logo {
+  color: #39ff88;
+
+  font-size: 40px;
+}
+
+.logoSub {
+  color: #8d96a5;
+
+  margin-top: 3px;
+}
+
+/* =========================
+   NAVIGATION
+========================= */
+
+.nav {
+  display: flex;
+
+  gap: 15px;
+
+  flex-wrap: wrap;
+}
+
+.nav a {
+  text-decoration: none;
+
+  color: white;
+
+  background: #161b22;
+
+  padding: 12px 18px;
+
+  border-radius: 12px;
+
+  border: 1px solid #2f3845;
+
+  transition: 0.25s;
+}
+
+.nav a:hover {
+  background: #39ff88;
+
+  color: black;
+
+  transform: translateY(-3px);
+
+  box-shadow: 0 0 15px #39ff88;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+  text-align: center;
+
+  padding: 60px 20px 40px;
+}
+
+.hero h2 {
+  font-size: 50px;
+
+  color: #39ff88;
+
+  margin-bottom: 15px;
+}
+
+.hero p {
+  color: #9aa4b2;
+
+  max-width: 700px;
+
+  margin: auto;
+}
+
+/* =========================
+   SEARCH
+========================= */
+
+.searchArea {
+  margin-top: 30px;
+
+  display: flex;
+
+  justify-content: center;
+
+  gap: 10px;
+
+  flex-wrap: wrap;
+}
+
+.searchInput {
+  width: 500px;
+
+  max-width: 90%;
+
+  padding: 15px;
+
+  background: #161b22;
+
+  border: 2px solid #39ff88;
+
+  border-radius: 12px;
+
+  color: white;
+}
+
+.searchInput:focus {
+  outline: none;
+
+  box-shadow: 0 0 15px rgba(57, 255, 136, 0.4);
+}
+
+.searchButton {
+  padding: 15px 25px;
+
+  border: none;
+
+  border-radius: 12px;
+
+  cursor: pointer;
+
+  background: #39ff88;
+
+  color: black;
+
+  font-weight: bold;
+
+  transition: 0.25s;
+}
+
+.searchButton:hover {
+  transform: translateY(-2px);
+
+  box-shadow: 0 0 15px #39ff88;
+}
+
+/* =========================
+   STATUS BAR
+========================= */
+
+.statusBar {
+  display: flex;
+
+  justify-content: center;
+
+  gap: 20px;
+
+  flex-wrap: wrap;
+
+  padding: 0 20px;
+
+  margin-bottom: 30px;
+}
+
+.statusItem {
+  background: #161b22;
+
+  border: 1px solid #39ff88;
+
+  border-radius: 12px;
+
+  padding: 12px 18px;
+}
+
+/* =========================
+   DASHBOARD
+========================= */
+
+.dashboard {
+  display: grid;
+
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+
+  gap: 25px;
+
+  padding: 40px;
+}
+
+.panel {
+  background: #161b22;
+
+  padding: 20px;
+
+  border-radius: 16px;
+
+  border: 1px solid #2f3845;
+
+  transition: 0.25s;
+}
+
+.panel:hover {
+  border-color: #39ff88;
+
+  transform: translateY(-4px);
+
+  box-shadow: 0 0 20px rgba(57, 255, 136, 0.2);
+}
+
+.panel h3 {
+  color: #39ff88;
+
+  margin-bottom: 10px;
+}
+
+.panel p {
+  color: #cfd8e3;
+}
+
+/* =========================
+   GAME BUTTONS
+========================= */
+
+.gameBtn {
+  width: 100%;
+
+  margin-top: 10px;
+
+  padding: 12px;
+
+  border: none;
+
+  border-radius: 10px;
+
+  cursor: pointer;
+
+  background: #222b38;
+
+  color: white;
+
+  transition: 0.25s;
+}
+
+.gameBtn:hover {
+  background: #39ff88;
+
+  color: black;
+
+  transform: translateY(-2px);
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+  text-align: center;
+
+  padding: 20px;
+
+  margin-top: 50px;
+
+  border-top: 2px solid #39ff88;
+
+  background: #10151d;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 900px) {
+  .header {
+    flex-direction: column;
+
+    gap: 20px;
+
+    padding: 20px;
+  }
+
+  .nav {
+    justify-content: center;
+  }
+
+  .logo {
+    font-size: 32px;
+  }
+
+  .hero h2 {
+    font-size: 36px;
+  }
+}

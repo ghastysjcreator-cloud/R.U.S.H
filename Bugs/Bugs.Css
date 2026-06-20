@@ -1,0 +1,250 @@
+/* =========================
+   BODY
+========================= */
+
+body {
+  margin: 0;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  background:
+    radial-gradient(circle at top, rgba(57, 255, 136, 0.12), transparent 35%), linear-gradient(180deg, #07090d, #0d1117, #07090d);
+
+  color: white;
+
+  min-height: 100vh;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  padding: 15px 40px;
+
+  background: #10151d;
+
+  border-bottom: 2px solid #39ff88;
+
+  box-shadow: 0 0 20px rgba(57, 255, 136, 0.15);
+  flex: 1;
+
+}
+
+/* =========================
+   LOGO
+========================= */
+
+.logoContainer {
+  display: flex;
+
+  align-items: center;
+}
+
+.logoImage {
+  height: 100px;
+
+  animation: logoGlow 4s infinite ease-in-out;
+}
+
+@keyframes logoGlow {
+  0% {
+    filter: drop-shadow(0 0 8px #39ff88);
+  }
+
+  50% {
+    filter: drop-shadow(0 0 25px #39ff88) drop-shadow(0 0 45px #39ff88);
+  }
+
+  100% {
+    filter: drop-shadow(0 0 8px #39ff88);
+  }
+}
+
+/* =========================
+   NAVIGATION
+========================= */
+
+.nav {
+  display: flex;
+
+  gap: 15px;
+
+  flex-wrap: wrap;
+}
+
+.nav a {
+  text-decoration: none;
+
+  color: white;
+
+  background: #161b22;
+
+  padding: 12px 18px;
+
+  border-radius: 12px;
+
+  border: 1px solid #2f3845;
+
+  transition: 0.25s;
+}
+
+.nav a:hover {
+  background: #39ff88;
+
+  color: black;
+
+  transform: translateY(-3px);
+
+  box-shadow: 0 0 15px #39ff88;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+  text-align: center;
+
+  padding: 60px 20px;
+}
+
+.hero h2 {
+  font-size: 50px;
+
+  color: #39ff88;
+
+  margin-bottom: 10px;
+}
+
+.hero p {
+  color: #9aa4b2;
+
+  font-size: 18px;
+}
+
+/* =========================
+   BUG GRID
+========================= */
+
+.bugGrid {
+  display: grid;
+
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+
+  gap: 25px;
+
+  padding: 30px;
+}
+
+/* =========================
+   BUG CARD
+========================= */
+
+.bugCard {
+  background: #161b22;
+
+  border: 1px solid #2f3845;
+
+  border-radius: 16px;
+
+  padding: 20px;
+
+  transition: 0.25s;
+}
+
+.bugCard:hover {
+  transform: translateY(-5px);
+
+  border-color: #39ff88;
+
+  box-shadow: 0 0 20px rgba(57, 255, 136, 0.25);
+}
+
+.bugCard h3 {
+  margin-top: 0;
+
+  color: #39ff88;
+}
+
+.bugCard p {
+  color: #cfd8e3;
+}
+
+/* =========================
+   STATUS
+========================= */
+
+.status {
+  display: inline-block;
+
+  margin-top: 15px;
+
+  padding: 8px 12px;
+
+  border-radius: 10px;
+
+  font-weight: bold;
+}
+
+.warning {
+  background: #ffd166;
+
+  color: black;
+}
+
+.danger {
+  background: #ff5555;
+
+  color: white;
+}
+
+.fixed {
+  background: #39ff88;
+
+  color: black;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+  text-align: center;
+
+  padding: 20px;
+
+  margin-top: 50px;
+
+  background: #10151d;
+
+  border-top: 2px solid #39ff88;
+}
+
+/* =========================
+   SCROLLBAR
+========================= */
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0d1117;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #39ff88;
+
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #6dffab;
+}
