@@ -19,6 +19,8 @@ body {
 ========================= */
 
 body {
+  flex-direction: column;
+  display: flex;
   font-family: Arial, Helvetica, sans-serif;
 
   background:
@@ -179,6 +181,17 @@ body::before {
   color: #39ff88;
 
   margin-bottom: 15px;
+  text-shadow:
+    -1px -1px 0px color-mix(in srgb, #39ff88, #000000 10%),
+    -3px -3px 0px color-mix(in srgb, #39ff88, #000000 17%),
+    -5px -5px 0px color-mix(in srgb, #39ff88, #000000 25%),
+    -7px -7px 0px color-mix(in srgb, #39ff88, #000000 33%),
+    -9px -9px 0px color-mix(in srgb, #39ff88, #000000 42%),
+    -11px -11px 0px color-mix(in srgb, #39ff88, #000000 51%),
+    -13px -13px 0px color-mix(in srgb, #39ff88, #000000 60%),
+    -15px -15px 0px color-mix(in srgb, #39ff88, #000000 70%),
+    -17px -17px 0px color-mix(in srgb, #39ff88, #000000 80%),
+    -19px -19px 12px color-mix(in srgb, #39ff88, #000000 90%);
 }
 
 .hero p {
@@ -364,7 +377,7 @@ body::before {
 
   padding: 20px;
 
-  margin-top: 50px;
+  margin-top: auto;
 
   border-top: 2px solid #39ff88;
 

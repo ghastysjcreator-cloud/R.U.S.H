@@ -1,0 +1,346 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  min-height: 100%;
+}
+
+/* =========================
+   BODY
+========================= */
+
+body {
+  flex-direction: column;
+  display: flex;
+  font-family: Arial, Helvetica, sans-serif;
+
+  background:
+    radial-gradient(circle at top, rgba(57, 255, 136, 0.12), transparent 30%),
+    linear-gradient(90deg, rgba(57, 255, 136, 0.04) 1px, transparent 1px),
+    linear-gradient(0deg, rgba(57, 255, 136, 0.04) 1px, transparent 1px), #070b10;
+
+  background-size:
+    auto,
+    60px 60px,
+    60px 60px,
+    auto;
+
+  color: white;
+
+  min-height: 100vh;
+}
+
+/* Floating particles */
+
+body::before {
+  content: "";
+
+  position: fixed;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  background-image: radial-gradient(#39ff88 1px, transparent 1px);
+
+  background-size: 120px 120px;
+
+  opacity: 0.12;
+}
+/* =========================
+   HEADER
+========================= */
+
+.header {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  width: 100%;
+
+  padding: 20px 50px;
+
+  background: #10151d;
+
+  border-bottom: 2px solid #39ff88;
+
+  box-shadow: 0 0 20px rgba(57, 255, 136, 0.15);
+}
+/* =========================
+LOGO
+========================= */
+
+.logoBox {
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+}
+
+.logoImage {
+  width: 90px;
+
+  height: 90px;
+
+  object-fit: contain;
+
+  animation: logoGlow 4s infinite ease-in-out;
+}
+
+@keyframes logoGlow {
+  0% {
+    filter: drop-shadow(0 0 8px #39ff88);
+  }
+
+  50% {
+    filter: drop-shadow(0 0 20px #39ff88) drop-shadow(0 0 40px #39ff88);
+  }
+
+  100% {
+    filter: drop-shadow(0 0 8px #39ff88);
+  }
+}
+
+.logo {
+  color: #39ff88;
+
+  font-size: 40px;
+}
+
+.logoSub {
+  color: #8d96a5;
+
+  margin-top: 3px;
+}
+/* =========================
+NAVIGATION
+========================= */
+
+.nav {
+  display: flex;
+
+  gap: 15px;
+
+  flex-wrap: wrap;
+}
+
+.nav a {
+  text-decoration: none;
+
+  color: white;
+
+  background: #161b22;
+
+  padding: 12px 18px;
+
+  border-radius: 12px;
+
+  border: 1px solid #2f3845;
+
+  transition: 0.25s;
+}
+
+.nav a:hover {
+  background: #39ff88;
+
+  color: black;
+
+  transform: translateY(-3px);
+
+  box-shadow: 0 0 15px #39ff88;
+}
+
+/* =========================
+HERO
+========================= */
+
+.hero {
+  text-align: center;
+
+  padding: 60px 20px;
+}
+.hero {
+  text-align: center;
+
+  padding: 60px 20px;
+
+  position: relative;
+}
+
+.hero::after {
+  content: "";
+
+  position: absolute;
+
+  width: 300px;
+
+  height: 300px;
+
+  left: 50%;
+
+  top: 50%;
+
+  transform: translate(-50%, -50%);
+
+  background: radial-gradient(rgba(57, 255, 136, 0.15), transparent 70%);
+
+  z-index: -1;
+}
+.hero h2 {
+  font-size: 50px;
+
+  color: #39ff88;
+
+  margin-bottom: 10px;
+  text-shadow:
+    -1px -1px 0px color-mix(in srgb, #39ff88, #000000 10%),
+    -3px -3px 0px color-mix(in srgb, #39ff88, #000000 17%),
+    -5px -5px 0px color-mix(in srgb, #39ff88, #000000 25%),
+    -7px -7px 0px color-mix(in srgb, #39ff88, #000000 33%),
+    -9px -9px 0px color-mix(in srgb, #39ff88, #000000 42%),
+    -11px -11px 0px color-mix(in srgb, #39ff88, #000000 51%),
+    -13px -13px 0px color-mix(in srgb, #39ff88, #000000 60%),
+    -15px -15px 0px color-mix(in srgb, #39ff88, #000000 70%),
+    -17px -17px 0px color-mix(in srgb, #39ff88, #000000 80%),
+    -19px -19px 12px color-mix(in srgb, #39ff88, #000000 90%);
+}
+
+.hero p {
+  color: #9aa4b2;
+
+  font-size: 18px;
+}
+
+/* =========================
+UPDATE GRID
+========================= */
+
+.updateGrid {
+  display: grid;
+
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+
+  gap: 25px;
+
+  padding: 30px;
+}
+
+/* =========================
+UPDATE CARD
+========================= */
+
+.updateCard {
+  background: #161b22;
+
+  border: 1px solid #2f3845;
+
+  border-radius: 16px;
+
+  padding: 20px;
+
+  transition: 0.25s;
+}
+
+.updateCard:hover {
+  transform: translateY(-5px);
+
+  border-color: #39ff88;
+
+  box-shadow: 0 0 20px rgba(57, 255, 136, 0.25);
+}
+
+.updateCard h3 {
+  margin-top: 0;
+
+  color: #39ff88;
+}
+
+.updateCard p {
+  color: #cfd8e3;
+}
+
+/* =========================
+STATUS
+========================= */
+
+.status {
+  display: inline-block;
+
+  margin-top: 15px;
+
+  padding: 8px 12px;
+
+  border-radius: 10px;
+
+  font-weight: bold;
+}
+
+.warning {
+  background: #ffd166;
+
+  color: black;
+}
+
+.danger {
+  background: #ff5555;
+
+  color: white;
+}
+
+.fixed {
+  background: #39ff88;
+
+  color: black;
+}
+
+/* =========================
+FOOTER
+========================= */
+
+.footer {
+  text-align: center;
+
+  padding: 20px;
+
+  margin-top: auto;
+
+  border-top: 2px solid #39ff88;
+
+  background: #10151d;
+}
+/* =========================
+   MAIN
+========================= */
+main {
+  display: block;
+}
+
+/* =========================
+SCROLLBAR
+========================= */
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0d1117;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #39ff88;
+
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #6dffab;
+}

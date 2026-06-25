@@ -1,20 +1,57 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  min-height: 100%;
+}
+
 /* =========================
    BODY
 ========================= */
 
 body {
-  margin: 0;
-
+  flex-direction: column;
+  display: flex;
   font-family: Arial, Helvetica, sans-serif;
 
   background:
-    radial-gradient(circle at top, rgba(57, 255, 136, 0.12), transparent 35%), linear-gradient(180deg, #07090d, #0d1117, #07090d);
+    radial-gradient(circle at top, rgba(57, 255, 136, 0.12), transparent 30%),
+    linear-gradient(90deg, rgba(57, 255, 136, 0.04) 1px, transparent 1px),
+    linear-gradient(0deg, rgba(57, 255, 136, 0.04) 1px, transparent 1px), #070b10;
+
+  background-size:
+    auto,
+    60px 60px,
+    60px 60px,
+    auto;
 
   color: white;
 
   min-height: 100vh;
 }
 
+/* Floating particles */
+
+body::before {
+  content: "";
+
+  position: fixed;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  background-image: radial-gradient(#39ff88 1px, transparent 1px);
+
+  background-size: 120px 120px;
+
+  opacity: 0.12;
+}
 /* =========================
    HEADER
 ========================= */
@@ -26,29 +63,34 @@ body {
 
   align-items: center;
 
-  padding: 15px 40px;
+  width: 100%;
+
+  padding: 20px 50px;
 
   background: #10151d;
 
   border-bottom: 2px solid #39ff88;
 
   box-shadow: 0 0 20px rgba(57, 255, 136, 0.15);
-  flex: 1;
-
 }
-
 /* =========================
-   LOGO
+LOGO
 ========================= */
 
-.logoContainer {
+.logoBox {
   display: flex;
 
   align-items: center;
+
+  gap: 15px;
 }
 
 .logoImage {
-  height: 100px;
+  width: 90px;
+
+  height: 90px;
+
+  object-fit: contain;
 
   animation: logoGlow 4s infinite ease-in-out;
 }
@@ -59,7 +101,7 @@ body {
   }
 
   50% {
-    filter: drop-shadow(0 0 25px #39ff88) drop-shadow(0 0 45px #39ff88);
+    filter: drop-shadow(0 0 20px #39ff88) drop-shadow(0 0 40px #39ff88);
   }
 
   100% {
@@ -67,8 +109,19 @@ body {
   }
 }
 
+.logo {
+  color: #39ff88;
+
+  font-size: 40px;
+}
+
+.logoSub {
+  color: #8d96a5;
+
+  margin-top: 3px;
+}
 /* =========================
-   NAVIGATION
+NAVIGATION
 ========================= */
 
 .nav {
@@ -106,7 +159,7 @@ body {
 }
 
 /* =========================
-   HERO
+HERO
 ========================= */
 
 .hero {
@@ -114,13 +167,51 @@ body {
 
   padding: 60px 20px;
 }
+.hero {
+  text-align: center;
 
+  padding: 60px 20px;
+
+  position: relative;
+}
+
+.hero::after {
+  content: "";
+
+  position: absolute;
+
+  width: 300px;
+
+  height: 300px;
+
+  left: 50%;
+
+  top: 50%;
+
+  transform: translate(-50%, -50%);
+
+  background: radial-gradient(rgba(57, 255, 136, 0.15), transparent 70%);
+
+  z-index: -1;
+}
 .hero h2 {
   font-size: 50px;
 
   color: #39ff88;
 
   margin-bottom: 10px;
+  text-shadow:
+    -1px -1px 0px color-mix(in srgb, #39ff88, #000000 10%),
+    -3px -3px 0px color-mix(in srgb, #39ff88, #000000 17%),
+    -5px -5px 0px color-mix(in srgb, #39ff88, #000000 25%),
+    -7px -7px 0px color-mix(in srgb, #39ff88, #000000 33%),
+    -9px -9px 0px color-mix(in srgb, #39ff88, #000000 42%),
+    -11px -11px 0px color-mix(in srgb, #39ff88, #000000 51%),
+    -13px -13px 0px color-mix(in srgb, #39ff88, #000000 60%),
+    -15px -15px 0px color-mix(in srgb, #39ff88, #000000 70%),
+    -17px -17px 0px color-mix(in srgb, #39ff88, #000000 80%),
+    -19px -19px 12px color-mix(in srgb, #39ff88, #000000 90%);
+
 }
 
 .hero p {
@@ -130,7 +221,7 @@ body {
 }
 
 /* =========================
-   BUG GRID
+BUG GRID
 ========================= */
 
 .bugGrid {
@@ -144,7 +235,7 @@ body {
 }
 
 /* =========================
-   BUG CARD
+BUG CARD
 ========================= */
 
 .bugCard {
@@ -178,7 +269,7 @@ body {
 }
 
 /* =========================
-   STATUS
+STATUS
 ========================= */
 
 .status {
@@ -212,7 +303,7 @@ body {
 }
 
 /* =========================
-   FOOTER
+FOOTER
 ========================= */
 
 .footer {
@@ -220,15 +311,21 @@ body {
 
   padding: 20px;
 
-  margin-top: 50px;
-
-  background: #10151d;
+  margin-top: auto;
 
   border-top: 2px solid #39ff88;
+
+  background: #10151d;
+}
+/* =========================
+   MAIN
+========================= */
+main {
+  display: block;
 }
 
 /* =========================
-   SCROLLBAR
+SCROLLBAR
 ========================= */
 
 ::-webkit-scrollbar {
